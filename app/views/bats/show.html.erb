@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @bat.name %>
+</p>
+
+<p>
+  <strong>Manufacturer:</strong>
+  <%= @bat.manufacturer_id %>
+</p>
+
+<h2>Reviews</h2>
+
+<% @bat.reviews.each do |review| %>
+  <p>
+    <%= review.review %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_bat_path(@bat) %> |
+<%= link_to 'Back', bats_path %>

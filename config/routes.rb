@@ -1,4 +1,12 @@
 Bats::Application.routes.draw do
+  resources :reviews
+
+  resources :bats
+
+  resources :manufacturers
+
+  root 'bats#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

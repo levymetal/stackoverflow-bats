@@ -1,0 +1,29 @@
+<h1>Listing bats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Manufacturer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bats.each do |bat| %>
+      <tr>
+        <td><%= bat.name %></td>
+        <td><%= bat.manufacturer.name %></td>
+        <td><%= link_to 'Show', bat %></td>
+        <td><%= link_to 'Edit', edit_bat_path(bat) %></td>
+        <td><%= link_to 'Destroy', bat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bat', new_bat_path %>
