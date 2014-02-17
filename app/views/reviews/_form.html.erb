@@ -12,12 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :review %><br>
-    <%= f.text_field :review %>
+    <%= f.label :manufacturer_id %><br>
+    <%= collection_select :manufacturer, :manufacturer_id, Manufacturer.all, :id, :name, :include_blank => true %>
   </div>
   <div class="field">
     <%= f.label :bat_id %><br>
-    <%= f.collection_select :bat_id, Bat.all, :id, :name  %>
+    <%= f.select :bat_id, Bat.all.map{ |b| [b.name, b.id, {'data-manufacturer' => b.manufacturer_id}] }  %>
+  </div>
+  <div class="field">
+    <%= f.label :review %><br>
+    <%= f.text_field :review %>
   </div>
   <div class="actions">
     <%= f.submit %>
