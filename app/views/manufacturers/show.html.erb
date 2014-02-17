@@ -5,5 +5,13 @@
   <%= @manufacturer.name %>
 </p>
 
+<h2>Bats</h2>
+
+<% @manufacturer.bats.each do |bat| %>
+  <p>
+    <%= bat.name %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_manufacturer_path(@manufacturer) %> |
 <%= link_to 'Back', manufacturers_path %>
